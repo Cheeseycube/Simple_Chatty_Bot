@@ -12,7 +12,7 @@ fun main() {
     count()
     question()
     println("How many people are alive in the U.S. with the name Gay Bowser?")
-    println("1. four people\n2. zero people\n3. one person\n4. two people")
+    println("a. four people\nb. zero people\nc. one person\nd. two people")
     test1()
     end()
 }
@@ -58,8 +58,8 @@ fun count() {
 }
 
 fun test1() {
-    val ans = input.nextInt()
-    if (ans != 3) {
+    val ans :Char = input.next().single()
+    if (ans != 'c') {
         println("Please, try again.")
         test2()
     }
@@ -67,24 +67,24 @@ fun test1() {
 
 }
 fun test2() {
-    val ans2 = input.nextInt()
-    if (ans2 != 3) {
+    val ans2 = input.next().single()
+    if (ans2 != 'c') {
         println("Please, try again.")
         test3()
     }
 }
 
 fun test3() {
-    val ans3 = input.nextInt()
-    if (ans3 != 3) {
+    val ans3 = input.next().single()
+    if (ans3 != 'c') {
         println("Please, try again.")
         test4()
     }
 }
 
 fun test4() {
-    val ans4 = input.nextInt()
-    if (ans4 != 3) {
+    val ans4 = input.next().single()
+    if (ans4 != 'c') {
         println("Please, try again.")
     }
     else {
