@@ -5,15 +5,15 @@ import java.util.*
 
 val input = Scanner(System.`in`)
 var boolean = true
+var FirstTest = true
+var ans :Char = 'a'
 fun main() {
     greet("Gay Bowser", "2020")
     remindName()
     guessAge()
     count()
     question()
-    println("How many people are alive in the U.S. with the name Gay Bowser?")
-    println("a. four people\nb. zero people\nc. one person\nd. two people")
-    test1()
+    test()
     end()
 }
 
@@ -25,7 +25,7 @@ fun greet(assistantName: String, birthYear: String) {
 
 fun remindName() {
     val name = input.nextLine()
-    if (name == "Gay Bowser") {
+    if (name == "Gay Bowser") {      // Checks to see if name is Gay Bowser, then assigns boolean accordingly
         boolean = false
         println("What a wonderful name you have, " + name + "!")
     }
@@ -57,38 +57,16 @@ fun count() {
     }
 }
 
-fun test1() {
-    val ans :Char = input.next().single()
+fun test() {
+    if (FirstTest == true) {  // Prints string on first run through, then loops infinitely until correct answer is given
+        println("How many people are alive in the U.S. with the name Gay Bowser?")
+        println("a. four people\nb. zero people\nc. one person\nd. two people")
+        FirstTest = false
+    }
+    ans = input.next().single()
     if (ans != 'c') {
         println("Please, try again.")
-        test2()
-    }
-
-
-}
-fun test2() {
-    val ans2 = input.next().single()
-    if (ans2 != 'c') {
-        println("Please, try again.")
-        test3()
-    }
-}
-
-fun test3() {
-    val ans3 = input.next().single()
-    if (ans3 != 'c') {
-        println("Please, try again.")
-        test4()
-    }
-}
-
-fun test4() {
-    val ans4 = input.next().single()
-    if (ans4 != 'c') {
-        println("Please, try again.")
-    }
-    else {
-        print("")
+        test()
     }
 }
 
