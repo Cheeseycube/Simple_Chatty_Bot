@@ -45,7 +45,7 @@ fun guessAge() {
         println("Your age is " + age + "; looks like you might be around a bit longer than the last person who had your name, haha!")
     }
     else {
-        println("Your age is " + age + "; that means there's still time to change your name to Gay Bowser, a far superior name.")
+        println("Your age is " + age + "; that means there's still time to change your name to Gay Bowser, a far superior name!")
     }
 }
 
