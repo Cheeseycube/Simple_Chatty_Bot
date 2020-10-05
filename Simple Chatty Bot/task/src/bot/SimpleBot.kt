@@ -4,13 +4,13 @@ import java.util.*
 
 
 val input = Scanner(System.`in`)
-
+var boolean = true
 fun main() {
-    greet("Gay Bowser", "2020") // change it as you need
+    greet("Gay Bowser", "2020")
     remindName()
     guessAge()
     count()
-    println("Let's see how well you know my name.")
+    question()
     println("How many people are alive in the U.S. with the name Gay Bowser?")
     println("1. four people\n2. zero people\n3. one person\n4. two people")
     test1()
@@ -25,7 +25,13 @@ fun greet(assistantName: String, birthYear: String) {
 
 fun remindName() {
     val name = input.nextLine()
-    println("What an awful name you have, " + name + "!")
+    if (name == "Gay Bowser") {
+        boolean = false
+        println("What a wonderful name you have, " + name + "!")
+    }
+    else {
+        println("What an awful name you have, " + name + "!")
+    }
 }
 
 fun guessAge() {
@@ -35,15 +41,19 @@ fun guessAge() {
     val rem5 = input.nextInt()
     val rem7 = input.nextInt()
     val age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105
-    println("Your age is " + age + "; that means there's still time to change your name to Gay Bowser, a far superior name.")
+    if (boolean == false) {
+        println("Your age is " + age + "; looks like you might be around a bit longer than the last person who had your name, haha!")
+    }
+    else {
+        println("Your age is " + age + "; that means there's still time to change your name to Gay Bowser, a far superior name.")
+    }
 }
 
 fun count() {
     println("Now I will prove to you that I can count to any natural number you want.")
     val num = input.nextInt()
     for (i in 0..num) {
-        print(i)
-        println("!")
+        println(i)
     }
 }
 
@@ -83,6 +93,19 @@ fun test4() {
 }
 
 fun end() {
+    if (boolean == false) {
+        println("Congratulations, I hope we meet again!")
+    }
+    else {
+        println("Congratulations, have a nice day!")
+    }
+}
 
-    println("Congratulations, have a nice day!")
+fun question() {
+    if (boolean == false) {
+        println("Let's see how well you know our name.")
+    }
+    else {
+        println("Let's see how well you know my name.")
+    }
 }
